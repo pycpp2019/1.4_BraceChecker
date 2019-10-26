@@ -7,7 +7,7 @@
 
 
 inline static bool processing(const char symb, std::stack<char>& str_stack) {
-	if(str_stack.top() == symb) {
+	if(!str_stack.empty() && str_stack.top() == symb) {
 		str_stack.pop();
 		return true;
 	} else {
