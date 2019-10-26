@@ -11,7 +11,7 @@ inline static bool processing(const char symb, std::stack<char>& str_stack) {
 		str_stack.pop();
 		return true;
 	} else {
-		std::cout << "Not balanced" << std::endl;
+		//std::cout << "Not balanced" << std::endl;
 		return false;
 	}
 }
@@ -53,10 +53,10 @@ bool BraceChecker::isBalanced(const std::string& str) {
 	}
 
 	if(str_stack.empty()) {
-		std::cout << "Balanced" << std::endl;
+		//std::cout << "Balanced" << std::endl;
 		return true;
 	} else {
-		std::cout << "Not balanced" << std::endl;
+		//std::cout << "Not balanced" << std::endl;
 		return false;
 	}
 }
