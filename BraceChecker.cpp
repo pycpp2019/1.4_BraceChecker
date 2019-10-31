@@ -25,7 +25,7 @@ bool BraceChecker::isBalanced(const std::string& str)
             int pos;
             pos=S.find(')');
             if (pos==-1) break;
-            if (S[pos-1]=='{' || S[pos-1]=='[') break;
+         //   if (S[pos-1]=='{' || S[pos-1]=='[') break;
             S.erase(pos,1);
             S.erase(0,1);
         }
@@ -35,7 +35,7 @@ bool BraceChecker::isBalanced(const std::string& str)
             int pos;
             pos=S.find('}');
             if (pos==-1) break;
-            if (S[pos-1]=='(' || S[pos-1]=='[') break;
+          //  if (S[pos-1]=='(' || S[pos-1]=='[') break;
             S.erase(pos,1);
             S.erase(0,1);
         }
@@ -45,7 +45,7 @@ bool BraceChecker::isBalanced(const std::string& str)
             int pos;
             pos=S.find(']');
             if (pos==-1) break;
-            if (S[pos-1]=='(' || S[pos-1]=='{') break;
+          //  if (S[pos-1]=='(' || S[pos-1]=='{') break;
             S.erase(pos,1);
             S.erase(0,1);
         }}}
