@@ -1,7 +1,7 @@
 #include "BraceChecker.h"
 
 int main() {
-	std::string sequence;
+std::string sequence;
 
 	std::getline(std::cin, sequence);
 
