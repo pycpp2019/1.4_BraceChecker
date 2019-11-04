@@ -1,7 +1,4 @@
-#include <iostream>
-#include <string>
-
-#include <BraceChecker.h>
+#include "BraceChecker.h"
 
 int main() {
 	std::string sequence;
@@ -13,6 +10,6 @@ int main() {
 	} else {
 		std::cout << "Not balanced" << std::endl;
 	}
-
+	
 	return 0;
 }
