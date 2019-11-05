@@ -20,6 +20,6 @@ bool BraceChecker::isBalanced(const std::string& a)
 		if ((input[i] == '(') && (input[i+1] == ')')) { input.erase(i,2); i -= 3; }
 		if ((input[i] == '[') && (input[i+1] == ']')) { input.erase(i,2); i -= 3; }
 	}
-	std::cout << input << std::endl;
+	//std::cout << input << std::endl;
 	if (input.size() == 3) { return 1; } else { return 0; }
 }
