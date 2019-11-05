@@ -13,16 +13,13 @@ bool BraceChecker::isBalanced(const std::string& a)
 	}
 	input = "bgn" + input;
 	int k;
-	while (1==1)
+
+	for (int i = 3; i < input.size() - 1; ++i)
 	{
-		k = 0;
-		for (int i = 0; i < input.size() - 1; ++i)
-		{
-			if ((input[i] == '{') && (input[i+1] == '}')) { input.erase(i,2); i -= 1; k++; }
-			if ((input[i] == '(') && (input[i+1] == ')')) { input.erase(i,2); i -= 1; k++; }
-			if ((input[i] == '[') && (input[i+1] == ']')) { input.erase(i,2); i -= 1; k++; }
-		}
-		if (k == 0) { break; }
+		if ((input[i] == '{') && (input[i+1] == '}')) { input.erase(i,2); i -= 3; }
+		if ((input[i] == '(') && (input[i+1] == ')')) { input.erase(i,2); i -= 3; }
+		if ((input[i] == '[') && (input[i+1] == ']')) { input.erase(i,2); i -= 3; }
 	}
+	std::cout << input << std::endl;
 	if (input.size() == 3) { return 1; } else { return 0; }
 }
