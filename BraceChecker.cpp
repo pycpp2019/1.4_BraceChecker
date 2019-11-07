@@ -74,12 +74,12 @@ bool BraceChecker::isBalanced(const std::string& str)
     
     if (S2.length()==0)
     {
-        cout<<"Balanced"<<endl;
+        //cout<<"Balanced"<<endl;
         return true;
     }
     else
     {
-        cout<<"Not balanced"<<endl;
+      //  cout<<"Not balanced"<<endl;
         return false;
     }
     }
