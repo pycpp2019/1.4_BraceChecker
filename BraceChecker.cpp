@@ -6,6 +6,7 @@ using namespace std;
 bool BraceChecker::isBalanced(const std::string& str)
 {   
     string S=str;
+    string S2="";
      int n=S.length();
     for (int i=0; i<n; i++)
     {
@@ -16,42 +17,62 @@ bool BraceChecker::isBalanced(const std::string& str)
         n=n-1;
         }
     }
-    while(S.length()!=0)
+    n=S.length();
+    for (int i=0; i<n; i++)
     {
-        if ( S[0] == '}'|| S[0] == ']'|| S[0] == ')')
-        break;
-        if (S[0] == '(')
+    
+        if (S[i] == '(' || S[i] == '{' || S[i] == '[')
         {
-            int pos;
-            pos=S.find(')');
-            if (pos==-1) break;
-         //   if (S[pos-1]=='{' || S[pos-1]=='[') break;
-            S.erase(pos,1);
-            S.erase(0,1);
+           S2=S2+S[i];
+
         }
-        else{
-        if (S[0] == '{')
-        {
-            int pos;
-            pos=S.find('}');
-            if (pos==-1) break;
-          //  if (S[pos-1]=='(' || S[pos-1]=='[') break;
-            S.erase(pos,1);
-            S.erase(0,1);
-        }
-        else{
-        if (S[0] == '[')
-        {
+         /*
             int pos;
             pos=S.find(']');
             if (pos==-1) break;
           //  if (S[pos-1]=='(' || S[pos-1]=='{') break;
             S.erase(pos,1);
-            S.erase(0,1);
-        }}}
+            S.erase(0,1);*/
+        
+        if (S[i] == ')')
+        {
+            S2=S2+')';
+            if (S2[S2.length()-2]=='(')
+            {
+                S2.erase(S2.length()-2,2);
+            }
+            else break;
+        }
+        else
+        {
+            
+            if (S[i] == '}')
+            {
+                S2=S2+'}';
+                if (S2[S2.length()-2]=='{')
+                {
+                    S2.erase(S2.length()-2,2);
+                }
+                else break;
+            }
+            else 
+            {
+                 if (S[i] == ']')
+                {
+                    S2=S2+"]";
+                    if (S2[S2.length()-2]=='[')
+                    {
+                        S2.erase(S2.length()-2,2);
+                    }
+                     else break;
+                }
+            }
+    
+        }
+        
     }
     
-    if (S.length()==0)
+    if (S2.length()==0)
     {
         cout<<"Balanced"<<endl;
         return true;
@@ -61,5 +82,8 @@ bool BraceChecker::isBalanced(const std::string& str)
         cout<<"Not balanced"<<endl;
         return false;
     }
+    }
     
-}
+ 
+    
+
