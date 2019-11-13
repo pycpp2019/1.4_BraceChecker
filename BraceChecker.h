@@ -5,5 +5,5 @@
 class BraceChecker {
 
 public:
-     bool isBalanced(const std::string&);
+     bool isBalanced(const std::string& brace);
 };
