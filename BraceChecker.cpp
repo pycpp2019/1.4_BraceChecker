@@ -20,6 +20,8 @@ bool BraceChecker::isBalanced(const std::string& brace) {
                 sequence.push(N);
             }
 
+if ((sequence.empty()) & ((N == '}')||(N == ']')||(N == ')')))
+            throw 3;
 
             if  (N == ')'){
                 if(sequence.top()== '(')
@@ -39,8 +41,7 @@ bool BraceChecker::isBalanced(const std::string& brace) {
                     sequence.pop();
                 else throw 2;
             }
-            if ((sequence.empty()) & ((N == '}')||(N == ']')||(N == ')')))
-            throw 3;
+
         }
 
     } catch (int a) {
@@ -55,7 +56,7 @@ bool BraceChecker::isBalanced(const std::string& brace) {
     return foo;
 }
 
-/*int main() {
+int main() {
 	std::string sequence;
 
 	std::getline(std::cin, sequence);
@@ -67,5 +68,5 @@ bool BraceChecker::isBalanced(const std::string& brace) {
 	}
 
 	return 0;
-}*/
+}
 
