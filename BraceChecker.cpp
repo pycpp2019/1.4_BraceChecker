@@ -9,15 +9,17 @@ using namespace std;
 bool BraceChecker::isBalanced(const std::string& brace) {
     std:: stack <char> sequence;
     static bool  foo = true;
-    try {
+    try { if ((brace[0] == '}')||(brace[0] == ']')||(brace[0] == ')')) throw 3;
 
         for (int i=0; i < brace.size(); i++){
 
             char N = brace[i];
 
+
             if ((N == '(') || (N == '{') || (N == '[')){
                 sequence.push(N);
             }
+
 
             if  (N == ')'){
                 if(sequence.top()== '(')
@@ -37,17 +39,19 @@ bool BraceChecker::isBalanced(const std::string& brace) {
                     sequence.pop();
                 else throw 2;
             }
-
-
+            if ((sequence.empty()) & ((N == '}')||(N == ']')||(N == ')')))
+            throw 3;
         }
+
     } catch (int a) {
         foo = false;
     }
 
-    if (sequence.empty()) {
-            foo = true;
+    if ((sequence.empty()&(foo))) {
+        foo = true;
     }
     else foo = false;
+
     return foo;
 }
 
