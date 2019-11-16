@@ -56,7 +56,7 @@ if ((sequence.empty()) & ((N == '}')||(N == ']')||(N == ')')))
     return foo;
 }
 
-int main() {
+/*int main() {
 	std::string sequence;
 
 	std::getline(std::cin, sequence);
@@ -68,5 +68,5 @@ int main() {
 	}
 
 	return 0;
-}
+}*/
 
