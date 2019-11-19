@@ -6,7 +6,7 @@
 using namespace std;
 
 
-bool BraceChecker::isBalanced(const std::string& brace) {
+static bool BraceChecker::isBalanced(const std::string& brace) {
     std:: stack <char> sequence;
     static bool  foo = true;
     try { if ((brace[0] == '}')||(brace[0] == ']')||(brace[0] == ')')) throw 3;
@@ -68,5 +68,5 @@ if ((sequence.empty()) & ((N == '}')||(N == ']')||(N == ')')))
 	}
 
 	return 0;
-}*/
-
+}
+*/
