@@ -9,37 +9,40 @@ using namespace std;
 bool BraceChecker::isBalanced(const std::string& brace) {
     std:: stack <char> sequence;
     bool  foo = true;
-    try { if ((brace[0] == '}')||(brace[0] == ']')||(brace[0] == ')')) throw 3;
+    try { 
+        if ((brace[0] == '}')||(brace[0] == ']')||(brace[0] == ')'))
+            throw 3;
 
         for (int i=0; i < brace.size(); i++){
 
             char N = brace[i];
 
-
             if ((N == '(') || (N == '{') || (N == '[')){
                 sequence.push(N);
             }
 
-if ((sequence.empty()) & ((N == '}')||(N == ']')||(N == ')')))
-            throw 3;
+            if ((sequence.empty()) & ((N == '}')||(N == ']')||(N == ')')))
+                throw 3;
 
             if  (N == ')'){
                 if(sequence.top()== '(')
                     sequence.pop();
-                else throw 2;
-
+                else
+                    throw 2;
             }
 
             if  (N == '}'){
                 if(sequence.top()== '{')
                     sequence.pop();
-                else throw 2;
+                else
+                    throw 2;
             }
 
             if  (N == ']'){
                  if(sequence.top()== '[')
                     sequence.pop();
-                else throw 2;
+                else
+                    throw 2;
             }
 
         }
@@ -51,7 +54,8 @@ if ((sequence.empty()) & ((N == '}')||(N == ']')||(N == ')')))
     if ((sequence.empty()&(foo))) {
         foo = true;
     }
-    else foo = false;
+    else
+        foo = false;
 
     return foo;
 }
