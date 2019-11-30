@@ -9,7 +9,7 @@ bool BraceChecker:: isBalanced(const std::string& st){
      list<char> s;
      auto a=s.begin();
      for(int i=0;i<st.length();i++){
-        if(st[st.length()-i-1]=='{'||st[st.length()-i-1]=='('||st[st.length()-i-1]=='['||st[st.length()-i-1]=='}'||st[st.length()-i-1]==')'||st[st.length()-i-1]=='{]')
+        if(st[st.length()-i-1]=='{'||st[st.length()-i-1]=='('||st[st.length()-i-1]=='['||st[st.length()-i-1]=='}'||st[st.length()-i-1]==')'||st[st.length()-i-1]==']')
             a=s.insert(a,st[st.length()-i-1]);
      }
      auto it=s.begin();
@@ -49,6 +49,7 @@ bool BraceChecker:: isBalanced(const std::string& st){
                 it--;
             }
         }
+       // copy(s.begin(),s.end(),ostream_iterator<char>(cout," ")); cout << endl;
         }
         if(s.empty())
             return 1;
@@ -58,7 +59,7 @@ bool BraceChecker:: isBalanced(const std::string& st){
 
  }
 
- /*int main(){
+/* int main(){
      string s;
      cin >> s;
      bool a=BraceChecker::isBalanced(s);
