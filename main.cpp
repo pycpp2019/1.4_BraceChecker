@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-#include <BraceChecker.h>
+#include "BraceChecker.h"
 
 int main() {
 	std::string sequence;
