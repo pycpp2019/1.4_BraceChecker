@@ -13,13 +13,18 @@ bool BraceChecker::isBalanced(const string &str) {
     };
     set<char> op {'(', '[', '{'};
     for (char ch : str) {
-        if (op.find(ch) == op.end()) {
+        if (op.find(ch) != op.end()) {
             st.push(ch);
-        } else if (brack.find(ch) != st.top()) {
+        } else if (st.empty()) {
             return false;
-        } else st.pop();
-        if (st.empty()) {
-            return true;
+        } else if ((ch != ')') && (ch != '(') && (ch != '[') && (ch != ']') && (ch != '{') && (ch != '}')) {
+            continue;
+        } else if ((brack.find(ch) != brack.end()) && (brack.find(ch)->second == st.top())) {
+            st.pop();
         } else return false;
+
     }
+     if (st.empty()) {
+        return true;
+    } else return false;
 }
