@@ -1,8 +1,14 @@
 #pragma once
 
-#include <string>
+#include <iostream>
+#include <stack>
+#include <map>
+#include <set>
+
+using namespace std;
 
 class BraceChecker {
 public:
-    static bool isBalanced(const std::string&);
+    map<char, char> objects;
+    static bool isBalanced(const string &str);
 };
