@@ -50,9 +50,10 @@ int main() {
         std::make_pair("()", true),
         std::make_pair("(}", false),
         std::make_pair("{()}", true),
-        std::make_pair("({)}", false),
+        std::make_pair("{[])", false),
         std::make_pair("[({})]", true),
         std::make_pair("[(]{)}", false),
+        std::make_pair("[{([][])}[]]", true),
         std::make_pair("{ab}", true),
         std::make_pair("{ }", true),
     };
