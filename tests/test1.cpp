@@ -67,7 +67,7 @@ int main() {
         std::make_pair("{ab}", true),
         std::make_pair("{ }", true),
     };
-    tr.RunTest([&rng, &cases]() {
+    tr.RunTest([&cases]() {
         for (std::pair<std::string, bool> p : cases) {
             ASSERT_EQUAL(BraceChecker::isBalanced(p.first), p.second);
         }
