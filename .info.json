@@ -1,5 +1,4 @@
 {
   "name": "Баланс скобок",
-  "cost": 1,
-  "test": ["make", "run-test"]
+  "test": "ctest"
 }

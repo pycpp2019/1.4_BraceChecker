@@ -1,4 +1,1 @@
-*.o
-*.exe
-out/*
-!out/README
+build/*
